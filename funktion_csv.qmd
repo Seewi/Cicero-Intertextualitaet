@@ -1,0 +1,18 @@
+
+```{r}
+library(tidyverse)
+```
+```{r}
+extract_cicero <- function(dateipfad) {
+    read_csv(dateipfad) |> 
+        filter(
+            Author == "Cicero",
+            str_starts(Title, "Letters To")
+        )
+}
+
+```
+
+```{r}
+extract_cicero("data/Namensfunde/tesserae_wildcard_homer__2026-04-16.csv")
+```
