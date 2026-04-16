@@ -4,15 +4,19 @@ library(tidyverse)
 ```
 ```{r}
 extract_cicero <- function(dateipfad) {
-    read_csv(dateipfad) |> 
-        filter(
-            Author == "Cicero",
-            str_starts(Title, "Letters To")
-        )
+  dateipfad |>
+    map(read_csv) |>
+    list_rbind() |>
+    filter(
+      Author == "Cicero",
+      str_starts(Title, "Letters To|Epistulae Ad")
+    )
 }
 
 ```
 
 ```{r}
-extract_cicero("data/Namensfunde/tesserae_wildcard_homer__2026-04-16.csv")
+extract_cicero(list.files("data/Namensfunde", pattern = "\\.csv$", full.names = TRUE))
 ```
+
+
