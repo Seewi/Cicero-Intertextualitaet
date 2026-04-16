@@ -9,14 +9,18 @@ extract_cicero <- function(dateipfad) {
     list_rbind() |>
     filter(
       Author == "Cicero",
-      str_starts(Title, "Letters To|Epistulae Ad")
-    )
+      str_starts(Title, "Letters To|Epistulae Ad"),
+      !duplicated(Text)
+    ) 
 }
 
 ```
 
 ```{r}
-extract_cicero(list.files("data/Namensfunde", pattern = "\\.csv$", full.names = TRUE))
+autoren_mentions <- extract_cicero(list.files("data/Namensfunde", pattern = "\\.csv$", full.names = TRUE)) |> 
+    select(-c(Locus, Era))
 ```
+
+
 
 
