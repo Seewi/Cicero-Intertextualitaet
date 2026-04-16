@@ -21,6 +21,9 @@ autoren_mentions <- extract_cicero(list.files("data/Namensfunde", pattern = "\\.
     select(-c(Locus, Era))
 ```
 
-
+```{r}
+autoren_mentions |> 
+  sjmisc::frq(Title)
+```
 
 
