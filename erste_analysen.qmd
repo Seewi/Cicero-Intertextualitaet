@@ -1,0 +1,21 @@
+
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+data <- read_csv("data/matches.csv")
+```
+
+
+```{r}
+data |> 
+    sjmisc::frq(sender)
+```
+
+
+```{r}
+data |> 
+    sjmisc::frq(recipient)
+```
