@@ -6,6 +6,7 @@ library(tidyverse)
 
 ```{r}
 data <- read_csv("data/matches.csv")
+allebriefe <- read_csv("data/cicero_letters.csv")
 ```
 
 
@@ -18,4 +19,16 @@ data |>
 ```{r}
 data |> 
     sjmisc::frq(recipient)
+```
+
+
+```{r}
+data |> 
+    group_by(year) |> 
+    count() |> 
+    ggplot()+
+    geom_bar(aes(x=year), data = allebriefe)+
+    geom_col(aes( x= year, y= n, fill = "red"))+
+    labs(title= "Briefe mit namentlicher Erwähnung von Autoren vs. alle Briefe")
+    
 ```
