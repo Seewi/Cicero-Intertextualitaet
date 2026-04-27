@@ -11,7 +11,7 @@ data <- read_csv("data/matches.csv")
 
 ```{r}
 data |> 
-    sjmisc::frq(sender)
+    sjmisc::frq(sender_c)
 ```
 
 
