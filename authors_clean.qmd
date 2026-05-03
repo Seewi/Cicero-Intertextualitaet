@@ -1,0 +1,70 @@
+---
+title: "Author cleaning"
+format: html
+---
+
+# Hier werden die Autoren gecleaned
+
+```{r}
+librarian::shelf(tidyverse, sjmisc)
+```
+
+
+
+```{r}
+daten <- read_csv("data/matches.csv")
+```
+
+
+```{r}
+daten <- daten |> 
+    mutate(
+        Autor = case_when(
+            str_detect(author, "Acci") ~ "Lucius Accius",
+            str_detect(author, "Archiloch") ~ "Archilochos",
+            str_detect(author, "Aristophan") ~ "Aristophanes",
+            str_detect(author, "Carnead") ~ "Carneades",
+            str_detect(author, "Diphil") ~ "Diphilos",
+            str_detect(author, "Enni") ~ "Quintus Ennius",
+            str_detect(author, "Epicur") ~ "Epicur",
+            str_detect(author, "Epicharm") ~ "Epicharmos",
+            str_detect(author, "Euripid") ~ "Euripides",
+            str_detect(author, "Herodot") ~ "Herodot",
+            str_detect(author, "Hesiod") ~ "Hesiod",
+            str_detect(author, "Homer") ~ "Homer",
+            str_detect(author, "Isocrat") ~ "Isocrates",
+            str_detect(author, "Menand") ~ "Menander",
+            str_detect(author, "Naevi") ~ "Gnaeus Naevius",
+            str_detect(author, "Pindar") ~ "Pindar",
+            str_detect(author, "Piso") ~ "Lucius Calpurnius Piso Frugi",
+            str_detect(author, "Plato") ~ "Platon",
+            str_detect(author, "Plaut") ~ "Titus Maccius Plautus",
+            str_detect(author, "Polyb") ~ "Polybios",
+            str_detect(author, "Rhinto") ~ "Rhinton",
+            str_detect(author, "Sallust") ~ "Gaius Sallustius Crispus",
+            str_detect(author, "Sophocl") ~ "Sophocles",
+            str_detect(author, "Thucydid") ~ "Thucydides",
+            str_detect(author, "Trabea") ~ "Trabea",
+            TRUE ~ author
+        )
+    ) 
+
+```
+
+
+```{r}
+
+greek_aut = c("Archilochos", "Aristophanes", "Carneades", "Diphilos", "Epicharmos", "Epicur", "Euripides", "Herodot", "Hesiod", "Homer", "Isocrates", "Menander", "Pindar", "Platon", "Polybios", "Rhinton", "Sophocles", "Thucydides")
+
+daten <- daten |> 
+    mutate(
+        Herkunft = if_else(
+            Autor %in% greek_aut, "Griechisch", "Latein"
+        )
+    )
+```
+
+
+```{r}
+write.csv(daten, "data/matches.csv", row.names = FALSE)
+```
