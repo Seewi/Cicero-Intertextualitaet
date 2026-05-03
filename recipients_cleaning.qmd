@@ -1,0 +1,64 @@
+
+```{r}
+librarian::shelf(tidyverse, gt, sjmisc)
+```
+
+
+```{r}
+daten <- read_csv("data/matches.csv")
+```
+
+
+
+
+```{r}
+daten <- daten |>
+  mutate(recipient = str_remove(recipient, "\\.$"))
+```
+```{r}
+daten |>
+     frq(recipient)
+
+```
+```{r}
+daten <- daten |>
+  mutate(recipient = replace_values(recipient,
+    "QUINTVS"           ~ "QVINTVS",
+    "MARCVS"            ~ "CICERO",
+    "M. CICERO"         ~ "CICERO",
+    "IMR"               ~ "PAETVS",
+    "PAPIRIVS"          ~ "PAETVS",
+    "L. PAPIRIQ PAETVS" ~ "PAETVS",
+    "Bruto"             ~ "BRVTVS",
+    "PLANCVS"           ~ "L. PLANCVS",
+    "ET"                ~ "TIRO",
+    "AT"                ~ "ATTICVS",
+    "CAESARI"          ~ "CAESAR"
+  ))
+```
+
+```{r}
+daten <- daten |> 
+    mutate(rec_full_name = replace_values(recipient,
+     "APPIVS PVLCHER" ~ "Appius Claudius Pulcher",
+     "ATTICVS" ~ "Titus Pomponius Atticus",
+     "BRVTVS" ~ "Marcus Iunius Brutus",
+     "C. ANTONIVS M. F. IMP" ~ "Gaius Antonius",
+     "C. CASSIVS " ~ "Gaius Cassius Longinus",
+     "C. MEMMIVS" ~ "Gaius Memmius",
+     "CAESAR" ~ "Gaius Julius Caesar",
+     "CICERO" ~ "Marcus Tullius Cicero",
+     "CORNIFICIVS" ~ "Quintus Cornificius",
+     "CVRIVS" ~ "Manius Curius",
+     "DOLABELLA" ~"Publius Cornelius Dolabella",
+     "GALLVS"~"Gaius Aquilius Gallus",
+     "L. LVCCEIVS Q. F" ~ "Lucius Lucceius",
+     "L. PLANCVS " ~ "Lucius Munatius Plancus",
+     "LENTVLVS IMP" ~ "Publius Cornelius Lentulus Spinther",
+     "LEPTA" ~ "Quintus Lepta",
+     "M. CATO" ~ "Marcus Porcius Cato",
+     "P. SILIVS PROPS" ~ "Publius Silius Nerva",
+     "P. SERVILIVS CONLEGA" ~ "Publius Servilius Isauricus"
+
+     ))
+```
