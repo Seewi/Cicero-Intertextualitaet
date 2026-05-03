@@ -7,29 +7,36 @@ library(tidyverse)
 ```{r}
 data <- read_csv("data/matches.csv")
 allebriefe <- read_csv("data/cicero_letters.csv")
+atticus <- allebriefe |> filter(corpus== "ad_atticum")
 ```
 
-
-```{r}
-data |> 
-    sjmisc::frq(sender_c)
-```
-
-
+# Plot Addresaten
 ```{r}
 data |> 
     group_by(rec_full_name) |> 
     count() |> 
-    mutate(rec_full_name = if_else(n > 1, rec_full_name, "Weitere Addressaten (Anzahl Verweise < 1)")) |> 
+    mutate(rec_full_name = if_else(n > 1, rec_full_name, "Weitere Addressaten (Anzahl Verweise = 1)")) |> 
     group_by(rec_full_name) |> 
     arrange(desc(n)) |> 
+    mutate(
+        label = ifelse(n > 1, as.character(n), "")) |> 
+    ungroup() |>
+    mutate(
+        rec_full_name = fct_reorder(rec_full_name, n),   # Reihenfolge festlegen
+        label = ifelse(n > 1, as.character(n), "")
+    ) |>
     ggplot(aes(x = "", y = n, fill = rec_full_name))+
     geom_col(stat = "identity", width = 1) +
     coord_polar("y") +
-    theme_void()
+    geom_text(aes(label = label ),position = position_stack(vjust = 0.5))+
+    theme_void()+
+    guides(fill = guide_legend(reverse = TRUE)) +
+    scale_fill_viridis_d(begin = 0.1, end = 0.95, option = "C") +
+    labs(title = "Addressaten von Briefen mit Nennung eines antiken Autors")
+
 ```
 
-
+# Nennungen vs. Anzahl Briefe pro Jahr
 
 ```{r}
 data |> 
@@ -38,12 +45,56 @@ data |>
     ggplot()+
     geom_bar(aes(x=year), data = allebriefe)+
     geom_col(aes( x= year, y= n, fill = "red"))+
-    labs(title= "Briefe mit namentlicher Erwähnung von Autoren vs. alle Briefe")
+    labs(title= "Namentlicher Erwähnung von Autoren vs. alle Briefe")
 ```
+
+
+# Anzahl Briefe mit Nennungen vs ohne bei Atticus
 
 
 ```{r}
 data |> 
     filter(corpus == "ad_atticum") |> 
-    frq(author)
+    group_by(year) |>
+    summarise(nenn_brief = n_distinct(letter_n), n = n()) |>    
+    ggplot(aes(x = year)) +
+    geom_bar(data = atticus, aes(x = year), fill = "grey80") +
+    geom_col(aes(y = nenn_brief), fill = "red")+
+    geom_text(aes(y = nenn_brief ,label = nenn_brief), vjust= -0.5)+
+    #geom_point(aes(x=year, y= n))
+    theme_minimal()
 ```
+
+# Idee Nennungsquotient pro Jahr - noch ohne Visualisierung
+
+```{r}
+
+at_by_year <- atticus |> 
+    group_by(year) |> 
+    summarise(anzahl_brief=n())
+
+matches_by_year <- data |> 
+    filter(corpus == "ad_atticum") |> 
+    group_by(year) |> 
+    summarise(nenn_brief = n_distinct(letter_n))
+
+nenn_quot <- left_join(matches_by_year, at_by_year, by = "year") |> 
+    mutate(nennungsquotient = round(nenn_brief/anzahl_brief, 2))
+
+
+```
+
+# Griechisch Römisch vergleich pro Korpus 
+
+```{r}
+data |> 
+  count(corpus, Herkunft) |> 
+  group_by(corpus) |> 
+  mutate(prozent = round(n / sum(n) * 100, 1)) |> 
+  ggplot(aes(y = corpus, x = n, fill = Herkunft)) +
+  geom_col() +
+  geom_text(aes(label = paste0(prozent, "%")),
+            position = position_stack(vjust = 0.5))
+```
+
+# Idee: Jahr 54 anschauen - fast keine Nennungen bei Atticus - aber 19 Mentions 
