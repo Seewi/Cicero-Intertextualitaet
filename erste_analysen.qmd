@@ -18,8 +18,17 @@ data |>
 
 ```{r}
 data |> 
-    sjmisc::frq(recipient)
+    group_by(rec_full_name) |> 
+    count() |> 
+    mutate(rec_full_name = if_else(n > 1, rec_full_name, "Weitere Addressaten (Anzahl Verweise < 1)")) |> 
+    group_by(rec_full_name) |> 
+    arrange(desc(n)) |> 
+    ggplot(aes(x = "", y = n, fill = rec_full_name))+
+    geom_col(stat = "identity", width = 1) +
+    coord_polar("y") +
+    theme_void()
 ```
+
 
 
 ```{r}
@@ -29,5 +38,12 @@ data |>
     ggplot()+
     geom_bar(aes(x=year), data = allebriefe)+
     geom_col(aes( x= year, y= n, fill = "red"))+
-    labs(title= "Briefe mit namentlicher Erwähnung von Autoren vs. alle Briefe")    
+    labs(title= "Briefe mit namentlicher Erwähnung von Autoren vs. alle Briefe")
+```
+
+
+```{r}
+data |> 
+    filter(corpus == "ad_atticum") |> 
+    frq(author)
 ```
