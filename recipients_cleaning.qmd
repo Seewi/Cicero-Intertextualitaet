@@ -44,7 +44,7 @@ daten <- daten |>
      "ATTICVS" ~ "Titus Pomponius Atticus",
      "BRVTVS" ~ "Marcus Iunius Brutus",
      "C. ANTONIVS M. F. IMP" ~ "Gaius Antonius",
-     "C. CASSIVS " ~ "Gaius Cassius Longinus",
+     "C. CASSIVS" ~ "Gaius Cassius Longinus",
      "C. MEMMIVS" ~ "Gaius Memmius",
      "CAESAR" ~ "Gaius Julius Caesar",
      "CICERO" ~ "Marcus Tullius Cicero",
@@ -53,12 +53,31 @@ daten <- daten |>
      "DOLABELLA" ~"Publius Cornelius Dolabella",
      "GALLVS"~"Gaius Aquilius Gallus",
      "L. LVCCEIVS Q. F" ~ "Lucius Lucceius",
-     "L. PLANCVS " ~ "Lucius Munatius Plancus",
+     "L. PLANCVS" ~ "Lucius Munatius Plancus",
      "LENTVLVS IMP" ~ "Publius Cornelius Lentulus Spinther",
      "LEPTA" ~ "Quintus Lepta",
      "M. CATO" ~ "Marcus Porcius Cato",
      "P. SILIVS PROPS" ~ "Publius Silius Nerva",
-     "P. SERVILIVS CONLEGA" ~ "Publius Servilius Isauricus"
-
+     "P. SERVILIVS CONLEGA" ~ "Publius Servilius Isauricus",
+     "PAETVS" ~ "Publius Autronius Paetus",
+     "QVINTVS" ~ "Quintus Tullius Cicero",
+     "TERENTIA" ~ "Terentia",
+     "TIRO" ~ "Marcus Tullius Tiro",
+     "TREBATIVS" ~"Gaius Trebatius Testa",
+     "VOLVMNIVS" ~ "Publius Volumnius"
      ))
+```
+
+```{r}
+daten |>
+     frq(rec_full_name)
+```
+
+```{r}
+ daten <- daten |> 
+    relocate(rec_full_name, .after = recipient)
+```
+
+```{r}
+write.csv(daten, "data/matches.csv", row.names = FALSE)
 ```

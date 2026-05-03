@@ -29,6 +29,5 @@ data |>
     ggplot()+
     geom_bar(aes(x=year), data = allebriefe)+
     geom_col(aes( x= year, y= n, fill = "red"))+
-    labs(title= "Briefe mit namentlicher Erwähnung von Autoren vs. alle Briefe")
-    
+    labs(title= "Briefe mit namentlicher Erwähnung von Autoren vs. alle Briefe")    
 ```
