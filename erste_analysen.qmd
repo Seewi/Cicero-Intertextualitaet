@@ -36,7 +36,7 @@ bild_1 <- data |>
 ```
 
 ```{r}
-ggsave("plot_1.svg", plot = bild_1, width = 8, height = 6)
+ggsave("images/plot_1.svg", plot = bild_1, width = 8, height = 6)
 
 ```
 
@@ -111,3 +111,39 @@ data |>
 ```
 
 # Idee: Jahr 54 anschauen - fast keine Nennungen bei Atticus - aber 19 Mentions 
+
+
+```{r}
+ data |> 
+    filter(year== -54) |> 
+    group_by(rec_full_name) |> 
+    count() |> 
+    mutate(rec_full_name = if_else(n > 1, rec_full_name, "Weitere Addressaten (Anzahl Verweise = 1)")) |> 
+    group_by(rec_full_name) |> 
+    arrange(desc(n)) |> 
+    mutate(
+        label = ifelse(n > 1, as.character(n), "")) |> 
+    ungroup() |>
+    mutate(
+        rec_full_name = fct_reorder(rec_full_name, n),   # Reihenfolge festlegen
+        label = ifelse(n > 1, as.character(n), "")
+    ) |>
+    ggplot(aes(x = "", y = n, fill = rec_full_name))+
+    geom_col(stat = "identity", width = 1) +
+    coord_polar("y") +
+    geom_text(aes(label = label ),position = position_stack(vjust = 0.5))+
+    theme_void()+
+    guides(fill = guide_legend(reverse = TRUE)) +
+    scale_fill_viridis_d(begin = 0.2, end = 0.95, option = "D") +
+    labs(title = "Nennungen von Autoren pro Addressaten")
+```
+
+
+```{r}
+data |> 
+    filter(rec_full_name %in% c("Titus Pomponius Atticus", "Quintus Tullius Cicero")) |> 
+    group_by(rec_full_name) |> 
+    count(Autor) |> 
+    arrange(desc(n), .by_group = T) |> 
+    gt::gt()
+```
