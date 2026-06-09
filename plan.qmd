@@ -1,0 +1,19 @@
+# Welche Plots
+
+## Deskriptiv
+- Kreisdiagramm Adressaten
+- Anzahl Briefe mit Nennungen vs alle Briefe
+    - Tabelle mit Quotient
+
+
+
+- Griechisch Latein Vergleich
+- Autorenverteilung
+
+- Ein Blick auf das Jahr 54
+    - Mit wem wurde geschrieben?
+    - Autorenverteilung 54
+
+## Sentiment
+
+- 

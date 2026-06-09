@@ -53,18 +53,23 @@ filter(
 )
 ```
 
-# Nennungen vs. Anzahl Briefe pro Jahr
+# Anzahl Briefe mit Nennungen vs. Anzahl Briefe pro Jahr
 
 ```{r}
-data |> 
+bild_2 <- data |> 
     group_by(year) |> 
-    count() |> 
+    summarise(nenn_brief = n_distinct(letter_n), n = n()) |> 
     ggplot()+
     geom_bar(aes(x=year), data = allebriefe)+
-    geom_col(aes( x= year, y= n, fill = "red"))+
-    labs(title= "Namentlicher Erwähnung von Autoren vs. alle Briefe")
+    geom_col(aes( x= year, y= nenn_brief, fill = "red"))+
+    labs(title= "Briefe mit Erwähnung von Autoren vs. alle Briefe")+
+    theme_minimal()
 ```
 
+```{r}
+ggsave("images/plot_2.svg", plot = bild_2, width = 8, height = 6)
+
+```
 
 # Anzahl Briefe mit Nennungen vs ohne bei Atticus
 
@@ -104,7 +109,7 @@ nenn_quot <- left_join(matches_by_year, at_by_year, by = "year") |>
 # Griechisch Römisch vergleich pro Korpus 
 
 ```{r}
-data |> 
+bild_3 <- data |> 
   count(corpus, Herkunft) |> 
   group_by(corpus) |> 
   mutate(prozent = round(n / sum(n) * 100, 1)) |> 
@@ -113,12 +118,54 @@ data |>
   geom_text(aes(label = paste0(prozent, "%")),
             position = position_stack(vjust = 0.5))
 ```
+```{r}
+ggsave("images/plot_3.svg", plot = bild_3, width = 8, height = 6)
+
+```
+```{r}
+lookuptable_herkunft <- data |> 
+    select(Autor, Herkunft) |> 
+    distinct(Autor, Herkunft)
+
+
+```
+
+```{r}
+autoren_n <- data |> 
+    filter_out(rec_full_name == "Marcus Tullius Cicero") |>  
+    count(Autor) |> 
+    arrange(desc(n)) |> 
+    left_join(lookuptable_herkunft, by = "Autor")
+
+```
+
+
+
+```{r}
+library(treemap)
+treemap(autoren_n,
+            index=c("Herkunft", "Autor"),
+            vSize="n",
+            type="index",
+            bg.labels = c("transparent"),
+            fontcolor.labels = c("black", "black"), 
+            align.labels = list(
+        c("left", "top"),
+        c("center", "center")),
+            palette = "Set2"
+            )
+```
+
+
+
+
+
 
 # Idee: Jahr 54 anschauen - fast keine Nennungen bei Atticus - aber 19 Mentions 
 
 
 ```{r}
- data |> 
+ bild_6 <- data |> 
     filter(year== -54) |> 
     group_by(rec_full_name) |> 
     count() |> 
@@ -143,11 +190,31 @@ data |>
 ```
 
 
-```{r}
-data |> 
-    filter(rec_full_name %in% c("Titus Pomponius Atticus", "Quintus Tullius Cicero")) |> 
-    group_by(rec_full_name) |> 
-    count(Autor) |> 
-    arrange(desc(n), .by_group = T)
 
+```{r}
+ggsave("images/plot_6.svg", plot = bild_6, width = 8, height = 6)
+
+```
+```{r}
+autoren_54 <-  data |> 
+    filter(year == -54) |>  
+    count(Autor) |> 
+    arrange(desc(n)) |> 
+    left_join(lookuptable_herkunft, by = "Autor")
+
+```
+
+
+```{r}
+treemap(autoren_54,
+            index=c("Herkunft", "Autor"),
+            vSize="n",
+            type="index",
+            bg.labels = c("transparent"),
+            fontcolor.labels = c("black", "black"), 
+            align.labels = list(
+        c("left", "top"),
+        c("center", "center")),
+            palette = "Set2"
+            )
 ```
