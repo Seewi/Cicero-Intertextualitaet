@@ -49,6 +49,8 @@ daten <- daten |>
             str_detect(author, "Atil") ~ "Atilius",
             str_detect(author, "Lucret") ~ "Lucretius",
             str_detect(author, "Terent") ~ "Terentius",
+            str_detect(author, "Pompon") ~ "Lucius Pomponius",
+            str_detect(author, "Caecil") ~ "Caecilius Statius",
             TRUE ~ author
         )
     ) 
