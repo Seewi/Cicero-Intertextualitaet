@@ -36,6 +36,10 @@ bild_1 <- data |>
 ```
 
 ```{r}
+bild_1
+```
+
+```{r}
 ggsave("images/plot_1.svg", plot = bild_1, width = 8, height = 6)
 
 ```
@@ -144,6 +148,6 @@ data |>
     filter(rec_full_name %in% c("Titus Pomponius Atticus", "Quintus Tullius Cicero")) |> 
     group_by(rec_full_name) |> 
     count(Autor) |> 
-    arrange(desc(n), .by_group = T) |> 
-    gt::gt()
+    arrange(desc(n), .by_group = T)
+
 ```
