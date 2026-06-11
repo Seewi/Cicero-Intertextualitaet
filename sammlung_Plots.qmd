@@ -56,16 +56,19 @@ filter(
 # Anzahl Briefe mit Nennungen vs. Anzahl Briefe pro Jahr
 
 ```{r}
+ nbriefe<-allebriefe |>group_by(year) |> count() 
+
 bild_2 <- data |> 
     group_by(year) |> 
     summarise(nenn_brief = n_distinct(letter_n), n = n()) |> 
-    ggplot()+
-    geom_bar(aes(x=year), data = allebriefe)+
+    ggplot(aes(x=year))+
+    geom_bar(aes(x=year), data = allebriefe, fill = "grey80")+
     geom_col(aes( x= year, y= nenn_brief, fill = "red"))+
+    geom_text(aes(y = nenn_brief ,label = nenn_brief), vjust= -0.5)+
+    geom_text(aes(y = n ,label = n), data = nbriefe, vjust= -0.7, color = "grey80")+
     labs(title= "Briefe mit Erwähnung von Autoren vs. alle Briefe")+
     theme_minimal()
 ```
-
 ```{r}
 ggsave("images/plot_2.svg", plot = bild_2, width = 8, height = 6)
 
