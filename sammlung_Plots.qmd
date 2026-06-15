@@ -120,8 +120,14 @@ bild_3 <- data |>
   ggplot(aes(y = corpus, x = n, fill = Herkunft)) +
   geom_col() +
   geom_text(aes(label = paste0(prozent, "%")),
-            position = position_stack(vjust = 0.5))
+            position = position_stack(vjust = 0.5)) +
+scale_fill_brewer(palette = "Set2")
 ```
+
+```{r}
+bild_3
+```
+
 ```{r}
 ggsave("images/plot_3.svg", plot = bild_3, width = 8, height = 6)
 
