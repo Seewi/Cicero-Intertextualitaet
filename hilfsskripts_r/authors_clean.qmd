@@ -51,6 +51,7 @@ daten <- daten |>
             str_detect(author, "Terent") ~ "Terentius",
             str_detect(author, "Pompon") ~ "Lucius Pomponius",
             str_detect(author, "Caecil") ~ "Caecilius Statius",
+            str_detect(author, "Aristot") ~ "Aristoteles",
             TRUE ~ author
         )
     ) 
@@ -60,7 +61,7 @@ daten <- daten |>
 
 ```{r}
 
-greek_aut = c("Archilochos", "Aristophanes", "Carneades", "Diphilos", "Epicharmos", "Epicur", "Euripides", "Herodot", "Hesiod", "Homer", "Isocrates", "Menander", "Pindar", "Platon", "Polybios", "Rhinton", "Sophocles", "Thucydides")
+greek_aut = c("Archilochos", "Aristophanes", "Carneades", "Diphilos", "Epicharmos", "Epicur", "Euripides", "Herodot", "Hesiod", "Homer", "Isocrates", "Menander", "Pindar", "Platon", "Polybios", "Rhinton", "Sophocles", "Thucydides", "Aristoteles")
 
 daten <- daten |> 
     mutate(
