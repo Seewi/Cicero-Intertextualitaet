@@ -1,0 +1,48 @@
+```{r}
+library(tidyverse)
+```
+
+
+```{r}
+matches <- read_csv("data/matches.csv")
+```
+
+
+```{python}
+import pandas as pd
+
+with open('data/sätze_y.txt', 'r', encoding='utf-8') as f:
+    sentences = f.read().splitlines()
+
+df = pd.DataFrame(sentences, columns=['input'])
+
+df.to_csv('data/saetze.csv', index=False, encoding='utf-8')
+```
+
+```{r}
+df <- read_csv("data/saetze.csv")
+```
+```{r}
+final <- bind_cols(matches,df)
+```
+
+
+```{r}
+write.csv(final, "data/final.csv", row.names = FALSE)
+```
+
+
+
+```{r}
+sentiment <- read_csv("data/sentiment.csv") |> 
+    select(-input)
+```
+
+
+```{r}
+final_w_sen <- bind_cols(final,sentiment)
+```
+
+```{r}
+write.csv(final, "data/final_w_sent.csv", row.names = FALSE)
+```

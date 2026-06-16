@@ -1,0 +1,20 @@
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+final <- read_csv("data/final.csv")
+```
+
+
+```{r}
+final <-  final |> 
+    filter_out(recipient == "REGI") 
+
+```
+
+
+```{r}
+write.csv(final, "data/final.csv", row.names = FALSE)
+```
