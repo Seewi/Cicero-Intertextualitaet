@@ -5,7 +5,7 @@ library(tidyverse)
 
 
 ```{r}
-data <- read_csv("data/matches.csv")
+data <- read_csv("data/final_w_sent.csv")
 allebriefe <- read_csv("data/cicero_letters.csv")
 atticus <- allebriefe |> filter(corpus== "ad_atticum")
 ```
@@ -69,6 +69,11 @@ bild_2 <- data |>
     labs(title= "Briefe mit Erwähnung von Autoren vs. alle Briefe")+
     scale_x_continuous(breaks = seq(-67, -43))+
     theme_minimal()
+```
+
+```{r}
+bild_2
+
 ```
 ```{r}
 ggsave("images/plot_2.svg", plot = bild_2, width = 8, height = 6)
@@ -199,6 +204,9 @@ treemap(autoren_n,
     labs(title = "Nennungen von Autoren pro Addressaten")
 ```
 
+```{r}
+bild_6
+```
 
 
 ```{r}
@@ -227,4 +235,10 @@ treemap(autoren_54,
         c("center", "center")),
             palette = "Set2"
             )
+```
+
+
+```{r}
+data |> 
+    distinct(Autor)
 ```
