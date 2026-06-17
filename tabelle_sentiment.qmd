@@ -48,10 +48,11 @@ plot <- function(Autor_plot) {
 
  plot_data |> 
     filter(Autor== Autor_plot) |>
-    ggplot(aes(y= Autor, fill = sentiment_d)) +
+    ggplot(aes(y= Autor, fill= factor(sentiment_d, levels = c( "POSITIVE", "NEGATIVE")))) +
     geom_bar(aes(x=n),stat = "identity")+
     theme_void()+
-    theme(legend.position = "none")
+    theme(legend.position = "none")+
+    scale_fill_discrete(palette = c("#4292c6","#f16913"))
 
 }
 ```
@@ -69,7 +70,6 @@ table_data |>
     columns = -Autor
   ) |> 
   cols_label_with(fn = str_to_title) |> 
-  fmt_number(decimals = 2) |> 
   cols_align('left', columns = Autor) |> 
   text_transform(
     locations = cells_body(columns = 'Sentiment_Verteilung'),
@@ -78,8 +78,12 @@ table_data |>
         ggplot_image(height = px(30), aspect_ratio = 5)
     }
   ) |> 
-    data_color(columns = NEGATIVE:POSITIVE, palette = "viridis") |> 
+    data_color(columns = NEGATIVE, palette = "Oranges") |> 
+    data_color(columns = POSITIVE, palette = "Blues") |> 
+    fmt_percent(positiv_rate, decimals = 0) |> 
     gtsave("tabelle_sentiments.html")
+
+    
 ```
 
 
