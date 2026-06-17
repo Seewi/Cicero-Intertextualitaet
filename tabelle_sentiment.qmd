@@ -1,0 +1,85 @@
+
+```{r}
+library(tidyverse)
+library(gt)
+```
+
+
+```{r}
+data <- read_csv("data/final_w_sent.csv")
+```
+
+
+```{r}
+data <- data |> 
+    mutate(sentiment_d= recode_values(output,
+        "MODERATELY NEGATIVE" ~ "NEGATIVE",
+        "VERY NEGATIVE" ~ "NEGATIVE",
+        "EXTREMELY NEGATIVE" ~ "NEGATIVE",
+        "EXTREMELY POSITIVE" ~ "POSITIVE",
+        "MODERATELY POSITIVE" ~ "POSITIVE"
+    ))
+    
+```
+
+
+```{r}
+table_data <- data |> 
+    group_by(Autor) |> 
+    count(sentiment_d) |> 
+    pivot_wider(names_from = sentiment_d, values_from = n,values_fill = 0) |> 
+    mutate(positiv_rate = POSITIVE/(NEGATIVE + POSITIVE)) 
+    
+
+```
+
+```{r}
+plot_data <- data |> 
+    group_by(Autor) |> 
+    count(sentiment_d)
+```
+
+```{r}
+
+```
+
+```{r}
+plot <- function(Autor_plot) {
+
+ plot_data |> 
+    filter(Autor== Autor_plot) |>
+    ggplot(aes(y= Autor, fill = sentiment_d)) +
+    geom_bar(aes(x=n),stat = "identity")+
+    theme_void()+
+    theme(legend.position = "none")
+
+}
+```
+
+
+
+```{r}
+table_data |> 
+    ungroup() |> 
+    mutate(Sentiment_Verteilung = Autor) |> 
+    arrange(desc((NEGATIVE+POSITIVE))) |> 
+    gt() |>
+  tab_spanner(
+    label = 'Sentiments',
+    columns = -Autor
+  ) |> 
+  cols_label_with(fn = str_to_title) |> 
+  fmt_number(decimals = 2) |> 
+  cols_align('left', columns = Autor) |> 
+  text_transform(
+    locations = cells_body(columns = 'Sentiment_Verteilung'),
+    fn = function(column) {
+      map(column, plot) |>
+        ggplot_image(height = px(30), aspect_ratio = 5)
+    }
+  ) |> 
+    data_color(columns = NEGATIVE:POSITIVE, palette = "viridis") |> 
+    gtsave("tabelle_sentiments.html")
+```
+
+
