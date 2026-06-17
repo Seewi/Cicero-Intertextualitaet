@@ -39,21 +39,23 @@ plot_data <- data |>
     count(sentiment_d)
 ```
 
-```{r}
-
-```
 
 ```{r}
 plot <- function(Autor_plot) {
-
- plot_data |> 
-    filter(Autor== Autor_plot) |>
-    ggplot(aes(y= Autor, fill= factor(sentiment_d, levels = c( "POSITIVE", "NEGATIVE")))) +
-    geom_bar(aes(x=n),stat = "identity")+
-    theme_void()+
-    theme(legend.position = "none")+
-    scale_fill_discrete(palette = c("#4292c6","#f16913"))
-
+  
+  plot_data |> 
+    filter(Autor == Autor_plot) |>
+    mutate(sentiment_d = factor(sentiment_d, 
+                                levels = c("POSITIVE", "NEGATIVE"))) |>
+    ggplot(aes(y = Autor, fill = sentiment_d)) +
+    geom_bar(aes(x = n), stat = "identity") +
+    theme_void() +
+    theme(legend.position = "none") +
+    scale_fill_manual(
+      values = c("POSITIVE" = "#4292c6", 
+                 "NEGATIVE" = "#f16913"),
+      drop = FALSE
+    )
 }
 ```
 
