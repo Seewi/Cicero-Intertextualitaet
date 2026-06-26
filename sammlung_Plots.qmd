@@ -73,7 +73,11 @@ bild_2 <- data |>
     ) +
     labs(title = "Briefe mit Erwähnung von Autoren vs. alle Briefe", x= "Jahr", y= "Anzahl Briefe") +
     scale_x_continuous(breaks = seq(-67, -43)) +
-    theme_minimal()
+    
+    theme_minimal()+
+    theme(
+        panel.grid.major.x = element_blank()
+    )
 ```
 
 ```{r}
@@ -132,7 +136,12 @@ bild_3 <- data |>
   geom_text(aes(label = paste0(prozent, "%")),
             position = position_stack(vjust = 0.5)) +
   scale_fill_brewer(palette = "Set2") + 
-  labs(title = "Sprachverteilung der genannten Autoren", x = "Anzahl Nennungen", y= "Korpus", fill = "Sprache")
+  labs(title = "Sprachverteilung der genannten Autoren", x = "Anzahl Nennungen", y= "Korpus", fill = "Sprache")+
+  theme_minimal()+
+  theme(
+        panel.grid.major.y = element_blank(),
+        panel.grid.major.x = element_blank()
+    )
 ```
 
 ```{r}
@@ -153,10 +162,13 @@ lookuptable_herkunft <- data |>
 
 ```{r}
 autoren_n <- data |> 
-    filter_out(rec_full_name == "Marcus Tullius Cicero") |>  
-    count(Autor) |> 
-    arrange(desc(n)) |> 
-    left_join(lookuptable_herkunft, by = "Autor")
+  filter_out(rec_full_name == "Marcus Tullius Cicero") |>  
+  count(Autor) |> 
+  arrange(desc(n)) |> 
+  left_join(lookuptable_herkunft, by = "Autor") |> 
+  rename(
+    `Verteilung der Nennungen aller Autoren\n(grösseres Feld - mehr Nennungen)` = n
+  )
 
 ```
 
@@ -166,7 +178,7 @@ autoren_n <- data |>
 library(treemap)
 treemap(autoren_n,
             index=c("Herkunft", "Autor"),
-            vSize="n",
+            vSize="Verteilung der Nennungen aller Autoren\n(grösseres Feld - mehr Nennungen)",
             type="index",
             bg.labels = c("transparent"),
             fontcolor.labels = c("black", "black"), 
@@ -221,26 +233,43 @@ ggsave("images/plot_6.svg", plot = bild_6, width = 8, height = 6)
 
 ```
 ```{r}
-autoren_54 <-  data |> 
-    filter(year == -54) |>  
-    count(Autor) |> 
-    arrange(desc(n)) |> 
-    left_join(lookuptable_herkunft, by = "Autor")
+autoren_54 <- data |>
+  filter(year == -54) |>
+  count(Autor) |>
+  left_join(lookuptable_herkunft, by = "Autor") |>
+  arrange(n, desc(Herkunft)) |>
+  mutate(Autor = factor(Autor, levels = Autor)) 
+
+
+```
+
+```{r}
+bild_7 <- ggplot(aes(x=n, y= Autor), data= autoren_54)+
+    geom_col(aes(x=n, fill = Herkunft)) +
+    scale_fill_manual(values = c("Latein" = "#FC8D62FF", 
+                 "Griechisch" = "#66C2A5FF"))+
+    theme_minimal()+
+    labs(title = "Erwähnte Autoren im Jahr 54", x = "Anzahl Nennungen", y= "Autor", fill = "Sprache")
+```
+
+```{r}
+bild_7
+```
+```{r}
+ggsave("images/plot_7.svg", plot = bild_7, width = 8, height = 6)
 
 ```
 
 
 ```{r}
 treemap(autoren_54,
-            index=c("Herkunft", "Autor"),
+            index= "Autor",
             vSize="n",
             type="index",
             bg.labels = c("transparent"),
             fontcolor.labels = c("black", "black"), 
-            align.labels = list(
-        c("left", "top"),
-        c("center", "center")),
-            palette = "Set2"
+        c("center", "center"),
+            palette = "Greens"
             )
 ```
 

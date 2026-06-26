@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='617.25pt' height='423.75pt' viewBox='0 0 617.25 423.75'>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='576.00pt' height='432.00pt' viewBox='0 0 576.00 432.00'>
 <g class='svglite'>
 <defs>
   <style type='text/css'><![CDATA[
@@ -21,46 +21,70 @@
 </defs>
 <rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
 <defs>
-  <clipPath id='cpMC4wMHw2MTcuMjV8MC4wMHw0MjMuNzU='>
-    <rect x='0.00' y='0.00' width='617.25' height='423.75' />
+  <clipPath id='cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA='>
+    <rect x='0.00' y='0.00' width='576.00' height='432.00' />
   </clipPath>
 </defs>
-<g clip-path='url(#cpMC4wMHw2MTcuMjV8MC4wMHw0MjMuNzU=)'>
-<text x='308.62' y='24.70' text-anchor='middle' style='font-size: 14.00px; font-family: "Arial";' textLength='7.78px' lengthAdjust='spacingAndGlyphs'>n</text>
-<rect x='142.80' y='270.28' width='92.86' height='57.25' style='stroke-width: 0.75; fill: #4BAF7F;' />
-<rect x='142.80' y='64.16' width='128.98' height='206.12' style='stroke-width: 0.75; fill: #4BAF84;' />
-<rect x='142.80' y='327.53' width='92.86' height='57.25' style='stroke-width: 0.75; fill: #4BAF8A;' />
-<rect x='235.66' y='270.28' width='92.86' height='57.25' style='stroke-width: 0.75; fill: #4BAF8F;' />
-<rect x='235.66' y='327.53' width='92.86' height='57.25' style='stroke-width: 0.75; fill: #4BAF95;' />
-<rect x='271.77' y='64.16' width='103.18' height='206.12' style='stroke-width: 0.75; fill: #4BAF9A;' />
-<rect x='328.52' y='270.28' width='46.43' height='114.51' style='stroke-width: 0.75; fill: #4BAFA0;' />
-<rect x='374.96' y='64.16' width='99.50' height='267.19' style='stroke-width: 0.75; fill: #E34F3C;' />
-<rect x='374.96' y='331.35' width='99.50' height='53.44' style='stroke-width: 0.75; fill: #E3873C;' />
-<rect x='157.14' y='293.90' width='64.18' height='10.01' style='stroke-width: 0.75; stroke: none;' />
-<rect x='187.74' y='162.22' width='39.09' height='10.01' style='stroke-width: 0.75; stroke: none;' />
-<rect x='160.21' y='351.16' width='58.04' height='10.01' style='stroke-width: 0.75; stroke: none;' />
-<rect x='265.60' y='293.90' width='32.98' height='10.01' style='stroke-width: 0.75; stroke: none;' />
-<rect x='259.79' y='351.16' width='44.61' height='10.01' style='stroke-width: 0.75; stroke: none;' />
-<rect x='307.77' y='162.22' width='31.18' height='10.01' style='stroke-width: 0.75; stroke: none;' />
-<rect x='330.49' y='323.53' width='42.49' height='8.01' style='stroke-width: 0.75; stroke: none;' />
-<rect x='385.29' y='184.42' width='78.83' height='26.68' style='stroke-width: 0.75; stroke: none;' />
-<rect x='402.40' y='353.07' width='44.61' height='10.01' style='stroke-width: 0.75; stroke: none;' />
-<text x='189.23' y='302.84' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='64.25px' lengthAdjust='spacingAndGlyphs'>Aristophanes</text>
-<text x='207.29' y='171.16' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='39.12px' lengthAdjust='spacingAndGlyphs'>Diphilos</text>
-<text x='189.23' y='360.10' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='58.09px' lengthAdjust='spacingAndGlyphs'>Epicharmos</text>
-<text x='282.09' y='302.84' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='33.00px' lengthAdjust='spacingAndGlyphs'>Homer</text>
-<text x='282.09' y='360.10' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='44.66px' lengthAdjust='spacingAndGlyphs'>Isocrates</text>
-<text x='323.37' y='171.16' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='31.22px' lengthAdjust='spacingAndGlyphs'>Platon</text>
-<text x='351.74' y='330.51' text-anchor='middle' style='font-size: 8.32px; font-family: "Arial";' textLength='42.52px' lengthAdjust='spacingAndGlyphs'>Thucydides</text>
-<text x='424.70' y='193.77' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='78.91px' lengthAdjust='spacingAndGlyphs'>Gaius Sallustius</text>
-<text x='424.70' y='209.61' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='37.28px' lengthAdjust='spacingAndGlyphs'>Crispus</text>
-<text x='424.70' y='362.01' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='44.66px' lengthAdjust='spacingAndGlyphs'>Lucretius</text>
-<rect x='142.80' y='64.16' width='232.16' height='320.63' style='stroke-width: 2.25;' />
-<rect x='374.96' y='64.16' width='99.50' height='320.63' style='stroke-width: 2.25;' />
-<rect x='146.40' y='67.76' width='56.85' height='10.01' style='stroke-width: 0.75; stroke: none;' />
-<rect x='378.56' y='67.76' width='32.38' height='10.01' style='stroke-width: 0.75; stroke: none;' />
-<text x='146.10' y='75.34' style='font-size: 11.00px; font-weight: bold; font-family: "Arial";' textLength='56.91px' lengthAdjust='spacingAndGlyphs'>Griechisch</text>
-<text x='378.26' y='75.34' style='font-size: 11.00px; font-weight: bold; font-family: "Arial";' textLength='32.41px' lengthAdjust='spacingAndGlyphs'>Latein</text>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA=)'>
+<rect x='0.00' y='0.000000000000057' width='576.00' height='432.00' style='stroke-width: 1.07; stroke: none; fill: #FFFFFF;' />
+</g>
+<defs>
+  <clipPath id='cpNzQuNjl8NDg0LjI4fDIzLjE4fDQwMC41MA=='>
+    <rect x='74.69' y='23.18' width='409.59' height='377.33' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpNzQuNjl8NDg0LjI4fDIzLjE4fDQwMC41MA==)'>
+<polyline points='139.85,400.50 139.85,23.18 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='232.94,400.50 232.94,23.18 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='326.03,400.50 326.03,23.18 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='419.12,400.50 419.12,23.18 ' style='stroke-width: 0.53; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='74.69,375.90 484.28,375.90 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='74.69,334.88 484.28,334.88 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='74.69,293.87 484.28,293.87 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='74.69,252.85 484.28,252.85 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='74.69,211.84 484.28,211.84 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='74.69,170.83 484.28,170.83 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='74.69,129.81 484.28,129.81 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='74.69,88.80 484.28,88.80 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='74.69,47.79 484.28,47.79 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='93.31,400.50 93.31,23.18 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='186.40,400.50 186.40,23.18 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='279.49,400.50 279.49,23.18 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='372.57,400.50 372.57,23.18 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<polyline points='465.66,400.50 465.66,23.18 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
+<rect x='93.31' y='357.44' width='93.09' height='36.91' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FC8D62;' />
+<rect x='93.31' y='316.43' width='93.09' height='36.91' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+<rect x='93.31' y='275.41' width='93.09' height='36.91' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+<rect x='93.31' y='234.40' width='93.09' height='36.91' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+<rect x='93.31' y='193.38' width='93.09' height='36.91' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+<rect x='93.31' y='152.37' width='93.09' height='36.91' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+<rect x='93.31' y='111.36' width='186.18' height='36.91' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+<rect x='93.31' y='70.34' width='372.36' height='36.91' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+<rect x='93.31' y='29.33' width='372.36' height='36.91' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+</g>
+<g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA=)'>
+<text x='69.76' y='379.05' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='35.69px' lengthAdjust='spacingAndGlyphs'>Lucretius</text>
+<text x='69.76' y='338.03' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='51.34px' lengthAdjust='spacingAndGlyphs'>Aristophanes</text>
+<text x='69.76' y='297.02' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='46.45px' lengthAdjust='spacingAndGlyphs'>Epicharmos</text>
+<text x='69.76' y='256.00' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='26.39px' lengthAdjust='spacingAndGlyphs'>Homer</text>
+<text x='69.76' y='214.99' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='35.69px' lengthAdjust='spacingAndGlyphs'>Isocrates</text>
+<text x='69.76' y='173.98' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='45.00px' lengthAdjust='spacingAndGlyphs'>Thucydides</text>
+<text x='69.76' y='132.96' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='47.92px' lengthAdjust='spacingAndGlyphs'>Callisthenes</text>
+<text x='69.76' y='91.95' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='41.06px' lengthAdjust='spacingAndGlyphs'>Aristoteles</text>
+<text x='69.76' y='50.94' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='24.94px' lengthAdjust='spacingAndGlyphs'>Platon</text>
+<text x='93.31' y='411.74' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='4.89px' lengthAdjust='spacingAndGlyphs'>0</text>
+<text x='186.40' y='411.74' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='4.89px' lengthAdjust='spacingAndGlyphs'>1</text>
+<text x='279.49' y='411.74' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='4.89px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text x='372.57' y='411.74' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='4.89px' lengthAdjust='spacingAndGlyphs'>3</text>
+<text x='465.66' y='411.74' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='4.89px' lengthAdjust='spacingAndGlyphs'>4</text>
+<text x='279.49' y='424.20' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='93.66px' lengthAdjust='spacingAndGlyphs'>Anzahl Nennungen</text>
+<text transform='translate(13.36,211.84) rotate(-90)' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='26.31px' lengthAdjust='spacingAndGlyphs'>Autor</text>
+<text x='500.72' y='195.76' style='font-size: 11.00px; font-family: "Arial";' textLength='41.00px' lengthAdjust='spacingAndGlyphs'>Sprache</text>
+<rect x='501.43' y='203.11' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+<rect x='501.43' y='220.39' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FC8D62;' />
+<text x='523.48' y='214.19' style='font-size: 8.80px; font-family: "Arial";' textLength='41.56px' lengthAdjust='spacingAndGlyphs'>Griechisch</text>
+<text x='523.48' y='231.47' style='font-size: 8.80px; font-family: "Arial";' textLength='23.95px' lengthAdjust='spacingAndGlyphs'>Latein</text>
+<text x='74.69' y='14.93' style='font-size: 13.20px; font-family: "Arial";' textLength='169.95px' lengthAdjust='spacingAndGlyphs'>Erwähnte Autoren im Jahr 54</text>
 </g>
 </g>
 </svg>
