@@ -10,3 +10,7 @@ https://chatgpt.com/share/6a427d20-7d28-83eb-abf7-81333a27959b
 https://chatgpt.com/share/6a427d4b-e22c-83eb-be2e-288abec520e3
 https://chatgpt.com/share/6a427d73-d9c0-83eb-9e30-f3b58d70cc02
 https://chatgpt.com/share/6a427d83-e178-83eb-8a3e-ddccc5882a29
+https://chatgpt.com/share/6a427d83-e178-83eb-8a3e-ddccc5882a29
+https://claude.ai/share/9bcc25aa-5e25-425f-8979-f3bdf04482e0
+https://claude.ai/share/5cf68607-87d6-4e8b-9c8a-c3906834b86e
+https://claude.ai/share/73ac4cf0-58f3-49d6-beb7-74ead3e91a67
