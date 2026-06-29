@@ -278,3 +278,40 @@ treemap(autoren_54,
 data |> 
     distinct(Autor)
 ```
+
+
+
+# Autoren nach Gattung
+
+
+```{r}
+gattung <- read.csv("data/authors_genre.csv")
+```
+
+```{r}
+gattung_plot <- gattung |> 
+    count(Gattung, Herkunft)
+```
+
+```{r}
+bild_8 <- ggplot(gattung_plot, 
+    aes(x = n, y = Gattung, fill = Herkunft)) +
+    geom_col() +
+    scale_fill_manual(values = c("Latein" = "#FC8D62FF", 
+                 "Griechisch" = "#66C2A5FF")) +
+    theme_minimal() +
+    labs(
+        title = "Gattung der erwähnten Autoren",
+        x = "Anzahl Autoren",
+        y = "Gattung",
+        fill = "Sprache"
+    )
+
+```
+
+```{r}
+bild_8
+```
+```{r}
+ggsave("images/plot_8.svg", plot = bild_8, width = 8, height = 6)
+```
