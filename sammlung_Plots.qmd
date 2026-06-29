@@ -295,14 +295,19 @@ gattung_plot <- gattung |>
 
 ```{r}
 bild_8 <- ggplot(gattung_plot, 
-    aes(x = n, y = Gattung, fill = Herkunft)) +
+    aes(x = n, y = reorder(Gattung, n, FUN = sum), fill = Herkunft)) +
     geom_col() +
+    geom_text(
+        aes(label = n),
+        position = position_stack(vjust = 0.5),
+        size = 2
+             ) +
     scale_fill_manual(values = c("Latein" = "#FC8D62FF", 
                  "Griechisch" = "#66C2A5FF")) +
     theme_minimal() +
     labs(
         title = "Gattung der erwähnten Autoren",
-        x = "Anzahl Autoren",
+        x = "Anzahl Nennungen",
         y = "Gattung",
         fill = "Sprache"
     )

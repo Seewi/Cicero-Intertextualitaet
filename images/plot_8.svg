@@ -47,25 +47,32 @@
 <polyline points='292.94,400.50 292.94,23.18 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
 <polyline points='375.95,400.50 375.95,23.18 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
 <polyline points='458.96,400.50 458.96,23.18 ' style='stroke-width: 1.07; stroke: #EBEBEB; stroke-linecap: butt;' />
-<rect x='193.33' y='306.17' width='116.21' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
-<rect x='126.93' y='306.17' width='66.41' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FC8D62;' />
-<rect x='218.24' y='216.33' width='91.31' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
-<rect x='126.93' y='216.33' width='91.31' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FC8D62;' />
-<rect x='143.53' y='126.49' width='107.91' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
-<rect x='126.93' y='126.49' width='16.60' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FC8D62;' />
+<rect x='193.33' y='216.33' width='116.21' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+<rect x='126.93' y='216.33' width='66.41' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FC8D62;' />
+<rect x='218.24' y='126.49' width='91.31' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+<rect x='126.93' y='126.49' width='91.31' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FC8D62;' />
+<rect x='143.53' y='306.17' width='107.91' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+<rect x='126.93' y='306.17' width='16.60' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #FC8D62;' />
 <rect x='126.93' y='36.65' width='340.34' height='80.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
+<text x='251.44' y='258.80' text-anchor='middle' style='font-size: 5.69px; font-family: "Arial";' textLength='6.31px' lengthAdjust='spacingAndGlyphs'>14</text>
+<text x='160.13' y='258.80' text-anchor='middle' style='font-size: 5.69px; font-family: "Arial";' textLength='3.16px' lengthAdjust='spacingAndGlyphs'>8</text>
+<text x='263.89' y='168.96' text-anchor='middle' style='font-size: 5.69px; font-family: "Arial";' textLength='5.89px' lengthAdjust='spacingAndGlyphs'>11</text>
+<text x='172.58' y='168.96' text-anchor='middle' style='font-size: 5.69px; font-family: "Arial";' textLength='5.89px' lengthAdjust='spacingAndGlyphs'>11</text>
+<text x='197.48' y='348.64' text-anchor='middle' style='font-size: 5.69px; font-family: "Arial";' textLength='6.31px' lengthAdjust='spacingAndGlyphs'>13</text>
+<text x='135.23' y='348.64' text-anchor='middle' style='font-size: 5.69px; font-family: "Arial";' textLength='3.16px' lengthAdjust='spacingAndGlyphs'>2</text>
+<text x='297.09' y='79.12' text-anchor='middle' style='font-size: 5.69px; font-family: "Arial";' textLength='6.31px' lengthAdjust='spacingAndGlyphs'>41</text>
 </g>
 <g clip-path='url(#cpMC4wMHw1NzYuMDB8MC4wMHw0MzIuMDA=)'>
-<text x='104.98' y='349.75' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='34.72px' lengthAdjust='spacingAndGlyphs'>Dichtung</text>
-<text x='104.98' y='259.91' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='26.39px' lengthAdjust='spacingAndGlyphs'>Drama</text>
-<text x='104.98' y='170.07' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='86.56px' lengthAdjust='spacingAndGlyphs'>Geschichtsschreibung</text>
+<text x='104.98' y='349.75' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='86.56px' lengthAdjust='spacingAndGlyphs'>Geschichtsschreibung</text>
+<text x='104.98' y='259.91' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='34.72px' lengthAdjust='spacingAndGlyphs'>Dichtung</text>
+<text x='104.98' y='170.07' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='26.39px' lengthAdjust='spacingAndGlyphs'>Drama</text>
 <text x='104.98' y='80.23' text-anchor='end' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='80.67px' lengthAdjust='spacingAndGlyphs'>Philosophie/Rhetorik</text>
 <text x='126.93' y='411.74' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='4.89px' lengthAdjust='spacingAndGlyphs'>0</text>
 <text x='209.93' y='411.74' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='9.78px' lengthAdjust='spacingAndGlyphs'>10</text>
 <text x='292.94' y='411.74' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='9.78px' lengthAdjust='spacingAndGlyphs'>20</text>
 <text x='375.95' y='411.74' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='9.78px' lengthAdjust='spacingAndGlyphs'>30</text>
 <text x='458.96' y='411.74' text-anchor='middle' style='font-size: 8.80px;fill: #4D4D4D; font-family: "Arial";' textLength='9.78px' lengthAdjust='spacingAndGlyphs'>40</text>
-<text x='297.09' y='424.20' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='74.67px' lengthAdjust='spacingAndGlyphs'>Anzahl Autoren</text>
+<text x='297.09' y='424.20' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='93.66px' lengthAdjust='spacingAndGlyphs'>Anzahl Nennungen</text>
 <text transform='translate(13.36,211.84) rotate(-90)' text-anchor='middle' style='font-size: 11.00px; font-family: "Arial";' textLength='39.19px' lengthAdjust='spacingAndGlyphs'>Gattung</text>
 <text x='500.72' y='195.76' style='font-size: 11.00px; font-family: "Arial";' textLength='41.00px' lengthAdjust='spacingAndGlyphs'>Sprache</text>
 <rect x='501.43' y='203.11' width='15.86' height='15.86' style='stroke-width: 1.07; stroke: none; stroke-linecap: butt; stroke-linejoin: miter; fill: #66C2A5;' />
