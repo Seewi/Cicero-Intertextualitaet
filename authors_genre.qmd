@@ -1,0 +1,84 @@
+---
+title: "Authors per Genre"
+format: html
+---
+
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+authors <- read.csv("data/final.csv")
+
+authors_genre <- authors |> 
+    mutate(
+        Gattung_klein = case_when(
+            Autor == "Platon" ~ "Philosophie",
+            Autor == "Aristoteles" ~ "Philosophie", 
+            Autor == "Isocrates" ~ "Philosophie", 
+            Autor == "Homer" ~ "Epos", 
+            Autor == "Callisthenes" ~ "Geschichtsschreibung", 
+            Autor == "Polybios" ~ "Geschichtsschreibung", 
+            Autor == "Xenophon" ~ "Geschichtsschreibung", 
+            Autor == "Herodot" ~ "Geschichtsschreibung", 
+            Autor == "Gnaeus Naevius" ~ "Epos",
+            Autor == "Hesiod" ~ "Epos",
+            Autor == "Epicur" ~ "Philosophie", 
+            Autor == "Lucius Pomponius" ~ "Dramatik", 
+            Autor == "Lucius Accius" ~ "Tragödie",
+            Autor == "Titus Maccius Plautus" ~ "Komödie", 
+            Autor == "Trabea" ~ "Komödie", 
+            Autor == "Lucius Calpurnius Piso Frugi" ~ "Geschichtsschreibung", 
+            Autor == "Gaius Lucilius" ~ "Satire",
+            Autor == "Terentius" ~ "Komödie",  
+            Autor == "Menander" ~ "Komödie", 
+            Autor == "Euripides" ~ "Tragödie", 
+            Autor == "Sophocles" ~ "Tragödie", 
+            Autor == "Archias" ~ "Epos", 
+            Autor == "Caecilius Statius" ~ "Komödie", 
+            Autor == "Epicharmos" ~ "Komödie", 
+            Autor == "Rhinton" ~ "Komödie", 
+            Autor == "Archilochos" ~ "Lyriker", 
+            Autor == "Quintus Ennius" ~ "Poesie", 
+            Autor == "Thucydides" ~ "Geschichtsschreibung", 
+            Autor == "Carneades" ~ "Philosophie", 
+            Autor == "Aristophanes" ~ "Komödie", 
+            Autor == "Pindar" ~ "Lyriker", 
+            Autor == "Atilius" ~ "Dramatik", 
+            Autor == "Lucretius" ~ "Epos", 
+            TRUE ~ NA_character_
+            )
+    )
+
+```
+
+
+```{r}
+authors_genre <- authors_genre |> 
+    mutate(
+        Gattung = case_when(
+            Autor %in% c("Platon", "Aristoteles", "Isocrates", "Epicur", "Carneades") ~ "Philosophie/Rhetorik",
+
+            Autor %in% c("Callisthenes", "Polybios", "Xenophon", "Herodot", "Lucius Calpurnius Piso Frugi", "Thucydides") ~ "Geschichtsschreibung",
+
+            Autor %in% c("Gnaeus Naevius", "Homer", "Hesiod", "Archias", "Archilochos", "Quintus Ennius", "Pindar", "Gaius Lucilius", "Lucretius") ~ "Dichtung",
+
+            Autor %in% c("Lucius Pomponius", "Lucius Accius", "Titus Maccius Plautus", "Trabea", "Terentius", "Menander", "Euripides", "Sophocles", "Caecilius Statius", "Epicharmos", "Rhinton", "Aristophanes", "Atilius") ~ "Drama",
+
+            TRUE ~ NA_character_
+
+        )
+    )
+```
+
+
+```{r}
+authors_genre |> 
+    count(Gattung)
+```
+
+
+```{r}
+write.csv(authors_genre, "data/authors_genre.csv", row.names = FALSE)
+```
