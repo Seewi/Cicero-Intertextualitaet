@@ -93,3 +93,5 @@ table_data |>
  library(webshot2)
 webshot("tabelle_sentiments.html", "images/tabelle.png", zoom = 2)
  ```
+
+ 
