@@ -71,7 +71,7 @@ table_data |>
     label = 'Sentiments',
     columns = -Autor
   ) |> 
-  cols_label_with(fn = str_to_title) |> 
+  cols_label(NEGATIVE = "Negativ", POSITIVE = "Positiv", positiv_rate = "Positiv in %", Sentiment_Verteilung = "Verteilung") |> 
   cols_align('left', columns = Autor) |> 
   text_transform(
     locations = cells_body(columns = 'Sentiment_Verteilung'),
